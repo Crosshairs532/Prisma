@@ -94,19 +94,18 @@ it consists of three parts:
 -
 -
 
-### Logging
+### Logging :this is useful when we want to see the information of the query we made.
 
-- this is useful when we want to see the information of the query we made.
-- `const prisma = new PrismaClient({
-  log: [
-  {
-  emit: "event",
-  level: "query",
-  },
-  ],
-  });
+      `const prisma = new PrismaClient({
+      log: [
+      {
+      emit: "event",
+      level: "query",
+      },
+      ],
+      });
 
-prisma.$on("query", (e) => {
-console.log(e.duration);
-console.log(e.query);
-});`
+    prisma.$on("query", (e) => {
+    console.log(e.duration);
+    console.log(e.query);
+    });`
