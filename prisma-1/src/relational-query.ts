@@ -1,6 +1,18 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: [
+    {
+      emit: "event",
+      level: "query",
+    },
+  ],
+});
+
+prisma.$on("query", (e) => {
+  console.log(e.duration);
+  console.log(e.query);
+});
 
 const relationalQuery = async () => {
   //! fluent api
@@ -25,18 +37,36 @@ const relationalQuery = async () => {
   //   });
 
   //! conditional filtering
-  const result = await prisma.post.findMany({
+  //   const result = await prisma.post.findMany({
+  //     where: {
+  //       AND: [
+  //         {
+  //           title: {
+  //             contains: "title",
+  //           },
+
+  //         },
+  //         {
+  //           published: false,
+  //         },
+  //       ],
+  //     },
+  //   });
+
+  //   const result = await prisma.user.findMany({
+  //     where: {
+  //       email: {
+  //         endsWith: ".com",
+  //       },
+  //     },
+  //   });
+
+  // ! operator - in
+  const result = await prisma.user.findMany({
     where: {
-      AND: [
-        {
-          title: {
-            contains: "title",
-          },
-        },
-        {
-          published: false,
-        },
-      ],
+      userName: {
+        in: ["user-1"],
+      },
     },
   });
   console.dir(result, { depth: Infinity });

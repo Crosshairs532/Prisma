@@ -83,9 +83,30 @@ it consists of three parts:
 - AND
 - OR
 - NOT
--
 
 ### [Operator](https://www.prisma.io/docs/orm/reference/prisma-client-reference#filter-conditions-and-operators)
 
 - startWith
 - endsWith
+- contains
+- equals
+- in
+-
+-
+
+### Logging
+
+- this is useful when we want to see the information of the query we made.
+- `const prisma = new PrismaClient({
+  log: [
+  {
+  emit: "event",
+  level: "query",
+  },
+  ],
+  });
+
+prisma.$on("query", (e) => {
+console.log(e.duration);
+console.log(e.query);
+});`
