@@ -64,3 +64,28 @@ it consists of three parts:
         - `const postsByUser: Post[] = await prisma.user
           .findUnique({ where: { email: 'alice@prisma.io' } })
           .posts()`
+
+## relational filters
+
+### partial search
+
+- `contains`
+  const result = await prisma.user.findMany({
+  where: {
+  userName: {
+  contains: "title",
+  },
+  },
+  });
+
+### Conditional filter (AND, OR NOT)
+
+- AND
+- OR
+- NOT
+-
+
+### [Operator](https://www.prisma.io/docs/orm/reference/prisma-client-reference#filter-conditions-and-operators)
+
+- startWith
+- endsWith
