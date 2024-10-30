@@ -14,56 +14,57 @@ datasource db {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  title     String   
-  content   String?
-  authoName String?
-  published Boolean  @default(false)
-  authorId  Int @unique
-  author User @relation(fields: [authorId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           Int            @id @default(autoincrement())
+  title        String
+  content      String?
+  authoName    String? 
+  published    Boolean        @default(false)
+  authorId     Int            @unique
+  author       User           @relation(fields: [authorId], references: [id])
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   PostCategory PostCategory[]
-  @@map("Posts")
 
+  @@map("Posts")
 }
 
-model User{
-  id Int @id @default(autoincrement())
+model User {
+  id       Int      @id @default(autoincrement())
   userName String
-  email String 
-  role userRole @default(user)
-  profile Profile?
-  posts Post[]
- @@map("users")
+  email    String
+  age      Int      @default(0)
+  role     userRole @default(user)
+  profile  Profile?
+  posts    Post[]
 
-
+  @@map("users")
 }
 
 model Profile {
-  id Int @id @default(autoincrement())
-  bio String?
-  userId Int @unique
-  user User  @relation(fields: [userId], references: [id])
+  id     Int     @id @default(autoincrement())
+  bio    String?
+  userId Int     @unique
+  user   User    @relation(fields: [userId], references: [id])
+
   @@map("profiles")
 }
 
 model Category {
-  id Int @id @default(autoincrement())
-  name String
+  id           Int            @id @default(autoincrement())
+  name         String
   PostCategory PostCategory[]
-@@map("categories")
 
+  @@map("categories")
 }
 
 model PostCategory {
-  postId Int 
-  post Post @relation(fields: [postId], references: [id])
+  postId     Int
+  post       Post     @relation(fields: [postId], references: [id])
   categoryId Int
-  category Category @relation(fields: [categoryId], references: [id])
+  category   Category @relation(fields: [categoryId], references: [id])
 
-@@id([postId, categoryId]) //! composite key
-@@map("post_category")
+  @@id([postId, categoryId]) //! composite key
+  @@map("post_category")
 }
 
 enum userRole {

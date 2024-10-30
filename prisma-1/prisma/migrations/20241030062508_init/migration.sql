@@ -6,7 +6,7 @@ CREATE TABLE "Posts" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT,
-    "authoName" TEXT NOT NULL,
+    "authoName" TEXT,
     "published" BOOLEAN NOT NULL DEFAULT false,
     "authorId" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -20,6 +20,7 @@ CREATE TABLE "users" (
     "id" SERIAL NOT NULL,
     "userName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "age" INTEGER NOT NULL DEFAULT 0,
     "role" "userRole" NOT NULL DEFAULT 'user',
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")

@@ -109,3 +109,37 @@ it consists of three parts:
     console.log(e.duration);
     console.log(e.query);
     });`
+
+### Aggregation, Grouping and Summarization .
+
+### Transaction and Batch Queries.
+
+> Three Way for transaction
+
+    - nested Writes
+    - Batch/ bulk Operation
+        - deleteMany()
+        - updateMany()
+        - createMany()
+        - createManyAndReturn()
+    - using transaction API
+        - Sequential Operations
+        - Interactive Operations.
+            - two param
+                - async function => that hold the main logic
+                - transaction options.
+
+### Raw Queries.
+
+- $queryRaw
+
+### Essential Commands
+
+- `npx prisma migrate dev` => to generate prisma client as well as migration happens.
+- `npx prisma generate` => to generate prisma client
+- `npx prisma validate`=> check is the schema is valid.
+- `npx prisma format`
+- `npx prisma db  pull --print`=> check if the migrated schema and prisma schema are same.
+- `npx prisma db  pull` => i want to pull the db schema to prisma schema.
+- `npx prisma db push`
+- `npx prisma` => to see all the available commands like above.

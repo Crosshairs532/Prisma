@@ -5,8 +5,13 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/find.ts",
     "create": "ts-node-dev --respawn --transpile-only src/create.ts",
+    "aggregate": "ts-node-dev --respawn --transpile-only src/aggregate.ts",
+    "groupBy": "ts-node-dev --respawn --transpile-only src/groupBy.ts",
     "relational-query": "ts-node-dev --respawn --transpile-only src/relational-query.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rawQuery": "ts-node-dev --respawn --transpile-only src/rawQueries.ts",
+    "batch": "ts-node-dev --respawn --transpile-only src/batch.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nestedWrites": "ts-node-dev --respawn --transpile-only src/nestedWrite.ts"
   },
   "keywords": [],
   "author": "",
