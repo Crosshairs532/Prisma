@@ -67,6 +67,17 @@ it consists of three parts:
 
 ## relational filters
 
+#### To-many
+
+- some
+- every
+- none
+
+#### -to-one
+
+- is
+- isNot
+
 ### partial search
 
 - `contains`
