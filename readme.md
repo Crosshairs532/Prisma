@@ -25,14 +25,13 @@ it consists of three parts:
 
 - update()
 - updateMany()
+- upsert()
 
 ### Delete
 
 - delete()
 - deleteMany()
 - $transaction - this is used to handle multiple promise at a time.
-
-### upsert => update or create
 
 ### Select
 
