@@ -16,8 +16,8 @@ const createUser = async () => {
 const createPost = async () => {
   const postCreated = await prisma.post.create({
     data: {
-      title: "post-9",
-      authorId: 2,
+      title: "post cat dog",
+      authorId: 1,
       published: false,
       views: 10,
     },

@@ -94,6 +94,17 @@ it consists of three parts:
 - count()
 - \_all
 
+## full text search ( this is in preview mode )
+
+- \_search
+- \_relevance ( finding relevance content)
+- @@fulltext([filed_name])
+- @@fulltext([filed_name, field_name])
+  `generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  }`
+
 ### partial search
 
 - `contains`
