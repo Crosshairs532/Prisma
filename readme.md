@@ -1,4 +1,4 @@
-# Prisma
+# [Prisma](https://www.prisma.io/docs/orm/reference/prisma-client-reference)
 
 #### Prisma ORM
 
