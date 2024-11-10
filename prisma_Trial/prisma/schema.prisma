@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -29,6 +30,7 @@ model User {
   coinflips    Boolean[]
   posts        Post[]
   profile      ExtendedProfile?
+  age Int
 }
 
 model Post {

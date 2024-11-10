@@ -18,6 +18,7 @@ CREATE TABLE "User" (
     "profileViews" INTEGER NOT NULL DEFAULT 0,
     "role" "Role" NOT NULL DEFAULT 'USER',
     "coinflips" BOOLEAN[],
+    "age" INTEGER NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );

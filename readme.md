@@ -37,13 +37,7 @@ it consists of three parts:
 
 - selects the field that i want to show in the result. in `MYSQL, PostgreSQL` it the field that we write after select statement. `select filed-1, field-2  from  tableName`.
 
-### Pagination and sorting
-
-- skip
-- take
-- orderby (sorting)
-
-### relations( @relation)
+## Relations
 
 ### One to one relations
 
@@ -77,6 +71,29 @@ it consists of three parts:
 - is
 - isNot
 
+### 4-5. Pagination and sorting and filtering
+
+- skip
+- take
+- Cursor based pagination
+- orderby (sorting)
+- NOT , OR
+- Null
+- not Null => { not : null }
+- has
+- \_relevance
+
+## 6. Aggregation, grouping and summarizing
+
+- \_avg
+- \_sum
+- groupBy + where + having
+- \_min
+- \_max
+- \_count
+- count()
+- \_all
+
 ### partial search
 
 - `contains`
@@ -101,8 +118,6 @@ it consists of three parts:
 - contains
 - equals
 - in
--
--
 
 ### Logging :this is useful when we want to see the information of the query we made.
 

@@ -6,7 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "select": "ts-node-dev --respawn --transpile-only ./src/select.ts",
     "create": "ts-node-dev --respawn --transpile-only ./src/create.ts",
-    "delete": "ts-node-dev --respawn --transpile-only ./src/delete.ts"
+    "delete": "ts-node-dev --respawn --transpile-only ./src/delete.ts",
+    "rlnq": "ts-node-dev --respawn --transpile-only ./src/relational_queries.ts",
+    "filter": "ts-node-dev --respawn --transpile-only ./src/filtering_sorting.ts",
+    "ags": "ts-node-dev --respawn --transpile-only ./src/6.agrregation_grouping_Summarization.ts"
   },
   "keywords": [],
   "author": "",

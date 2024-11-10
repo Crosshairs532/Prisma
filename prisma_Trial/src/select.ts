@@ -46,17 +46,6 @@ const selectFields = async () => {
   //     },
   //   });
 
-  //! relational filters  = is, isnOt
-  //   const posts = await prisma.post.findMany({
-  //     where: {
-  //       author: {
-  //         is: {
-  //           id: 2,
-  //         },
-  //       },
-  //     },
-  //   });
-
   const users = await prisma.user
     .findUnique({
       where: {
@@ -64,15 +53,6 @@ const selectFields = async () => {
       },
     })
     .posts();
-
-  //   const postNotUser = await prisma.post.findMany({
-  //     where: {
-  //       //   author: {},
-  //       //   posts: {
-  //       //     some: {},
-  //       //   },
-  //     },
-  //   });
 
   console.log(users, "=>");
 };
